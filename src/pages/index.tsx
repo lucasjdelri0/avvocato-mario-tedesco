@@ -2,8 +2,18 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import tw from "tailwind-styled-components";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const Container = tw.div`
+    flex
+    items-center
+    justify-center
+    flex-col
+    w-full
+    bg-indigo-600
+`;
 
 const Home = () => {
   return (
@@ -15,7 +25,15 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className="text-3xl font-semibold underline">Hello world!</h1>
+        <Container>
+          <h1 className="text-3xl font-semibold underline">Hello world!</h1>
+          <button className="btn">Button</button>
+          <button className="btn btn-primary">Button</button>
+          <button className="btn btn-secondary">Button</button>
+          <button className="btn btn-accent">Button</button>
+          <button className="btn btn-ghost">Button</button>
+          <button className="btn btn-link">Button</button>
+        </Container>
       </main>
     </>
   );
